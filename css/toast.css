@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Pacifico&family=Quicksand:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#toast {
+    font-family: 'Oswald', sans-serif;
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999999999;
+}
+
+.toast {
+    --primary-color: #333;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    padding: 15px  ;
+    border-radius: 10px;
+    border-left: 4px solid ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    height: 70px;
+    max-width: 450px;
+    min-width: 400px;
+    transition: all 0.3s ease;    
+}
+
+.toast:not(:first-of-type) {
+    margin-top: 16px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast.toast--success {
+    --primary-color: #20A779;
+}
+
+.toast.toast--warning {
+    --primary-color: #F0A72C;
+}
+
+.toast.toast--error {
+    --primary-color: #fc0a0ab7;
+}
+
+.toast.toast--info {
+    --primary-color: #007BC3;
+}
+
+.toast__mgs {
+    width: 4px;
+    border-radius: 30px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.toast__icon {
+    padding: 0 12px;
+}
+
+.toast__icon i {
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+.toast__body {
+    flex: 1;
+}
+
+.toast__body h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.toast__body p {
+    font-size: 16px;
+    color: #888;
+    margin: 0 !important;
+}
+
+.toast__close {
+    padding: 8px 12px;
+    margin-left: 8px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.toast__close:hover {
+    opacity: 1;
+}
