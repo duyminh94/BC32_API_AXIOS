@@ -119,11 +119,6 @@ function validatePostion() {
 
   if (!loaiND) {
     spanEl.style.display = "Block";
-    spanEl.innerHTML = "Người dùng không được để trống";
-    return false;
-  }
-  if (loaiND === 'DSNguoiDung') {
-    spanEl.style.display = "Block";
     spanEl.innerHTML = "Vui Lòng Chọn Người Dùng";
     return false;
   }
@@ -138,14 +133,9 @@ function validateTrans() {
   
   if (!ngonngu) {
     spanEl.style.display = "Block";
-    spanEl.innerHTML = "Ngôn Ngữ Không Được Để Trống";
+    spanEl.innerHTML = "Vui lòng Chọn Ngôn Ngữ";
     return false;
   } 
-  if(ngonngu === 'DSNgonNgu'){
-    spanEl.style.display = "Block";
-    spanEl.innerHTML = "Vui lòng Chọn Ngôn Ngữ"; 
-    return false;
-  }
   spanEl.style.display = "none";
   spanEl.innerHTML = "";
   return true;
